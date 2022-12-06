@@ -2,14 +2,13 @@ package com.example.dependencyinjectionstart.example2.di
 
 import com.example.dependencyinjectionstart.example2.data.repository.ExampleRepositoryImpl
 import com.example.dependencyinjectionstart.example2.domain.ExampleRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 @Module
-class DomainModule {
+interface DomainModule {
 
-    @Provides
-    fun provideRepository(exampleRepository: ExampleRepositoryImpl): ExampleRepository {
-        return exampleRepository
-    }
+    @Binds
+    fun bindRepository(exampleRepository: ExampleRepositoryImpl): ExampleRepository
 }
