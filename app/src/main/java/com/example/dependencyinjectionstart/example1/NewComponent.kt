@@ -7,8 +7,4 @@ interface NewComponent {
 
     fun inject(activity: Activity)
 
-    fun getKeyboard(): Keyboard
-    fun getMouse(): Mouse
-    fun getMonitor(): Monitor
-
 }
