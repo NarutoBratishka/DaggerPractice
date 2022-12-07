@@ -7,11 +7,11 @@ import javax.inject.Inject
 
 class ExampleApiService @Inject constructor(
     private val context: Context,
-    private val currentTimeMillis: Long
+    private val timeMillis: Long
 ) {
 
     fun method() {
-        Log.d(LOG_TAG, "ExampleApiService: ${context.getString(R.string.app_name)}, currentTime: $currentTimeMillis")
+        Log.d(LOG_TAG, "ExampleApiService: ${context.getString(R.string.app_name)}, currentTime: $timeMillis")
     }
 
     companion object {

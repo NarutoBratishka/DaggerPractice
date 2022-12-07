@@ -4,21 +4,19 @@ import android.content.Context
 import com.example.dependencyinjectionstart.example2.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Component.Factory
 
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Builder
-    interface ApplicationComponentBuilder {
+    @Factory
+    interface ApplicationComponentFactory {
 
-        @BindsInstance
-        fun context(context: Context): ApplicationComponentBuilder
-
-        @BindsInstance
-        fun currentTime(currentTimeMillis: Long): ApplicationComponentBuilder
-
-        fun build(): ApplicationComponent
+        fun create(
+            @BindsInstance context: Context,
+            @BindsInstance timeMillis: Long
+        ): ApplicationComponent
     }
 }
