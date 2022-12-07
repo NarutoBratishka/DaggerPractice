@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.dependencyinjectionstart.R
 import com.example.dependencyinjectionstart.example1.Activity
 import com.example.dependencyinjectionstart.example2.di.ApplicationComponent
+import com.example.dependencyinjectionstart.example2.di.ContextModule
 import com.example.dependencyinjectionstart.example2.di.DaggerApplicationComponent
 import javax.inject.Inject
 
@@ -13,7 +14,11 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: ExampleViewModel
 
-    private val component = DaggerApplicationComponent.create()
+    private val component by lazy {
+        DaggerApplicationComponent.builder()
+            .contextModule(ContextModule(this))
+            .build()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
