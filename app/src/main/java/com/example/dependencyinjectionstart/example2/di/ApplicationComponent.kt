@@ -16,6 +16,9 @@ interface ApplicationComponent {
         @BindsInstance
         fun context(context: Context): ApplicationComponentBuilder
 
+        @BindsInstance
+        fun currentTime(currentTimeMillis: Long): ApplicationComponentBuilder
+
         fun build(): ApplicationComponent
     }
 }
