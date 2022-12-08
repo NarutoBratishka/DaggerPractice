@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DependencyInjectionStart">
+        android:theme="@style/Theme.DependencyInjectionStart"
+        android:name=".example2.ExampleApplication">
         <activity
             android:name="com.example.dependencyinjectionstart.example2.presentation.MainActivity"
             android:exported="true">
