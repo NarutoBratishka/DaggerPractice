@@ -10,7 +10,7 @@ import dagger.Component
 import dagger.Component.Factory
 import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
